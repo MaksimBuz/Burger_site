@@ -5,10 +5,22 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>burger-test</title>
+    <link rel="stylesheet" href="./normalize.css">
     <link rel="stylesheet" href="./style.css">
 </head>
 <body>
 <noscript>Для корректной работы сайта просим вас включить JavaScript</noscript>
+<div class="menu " id="menu">
+     <div class="auth conteiner " id="auth">
+        <div class="auth_input">
+            Имя <input type="text" id="input_name" class="input_name" placeholder="Alice">
+            Пароль <input type="text" id="password" class="password" placeholder="password">
+            <button class="btn">Войти</button> 
+            <button class="btn_reg" id="btn_reg">Зарегестрироваться</button>
+            <p id="eror_message"></p>
+        </div>
+    </div>
+</div>
     <div class="main">
         <div class="conteiner">
             <div class="text">
@@ -38,7 +50,6 @@
     </div>
 <div class="footer">
     <div class="conteiner">
-
         <div class="item"> 
             <img src="./images/Icon.png" alt="" class="log">
         </div>
