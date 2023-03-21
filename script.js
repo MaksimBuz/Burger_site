@@ -13,7 +13,6 @@ function randomBackgroundImage() {
     image_number = Math.floor( Math.random()* images.length);
     header_image.style.backgroundImage= 'url(' + images[image_number] + ')';
 }
-
 setInterval('randomBackgroundImage()',1000);
 
  // Авторизация
