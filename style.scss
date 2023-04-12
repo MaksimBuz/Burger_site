@@ -1,24 +1,34 @@
 // Для всей страницы
 $Font:Verdana, Geneva, Tahoma, sans-serif;
 $Color_text: #FAF9F9;
-
+$modal-content-color: red;
 * {
     margin: 0;
     padding: 0;
+    color: $Color_text;
+    font-family: $Font;
+
 }
+
 button {
     margin-right: 20px;
     background: #FBB731;
     border-radius: 5px;
     padding: 10px 25px;
     cursor: pointer;
+    color: #1E2F40;
     &:hover{
         background: #f7da9ff1;
-
-
     }
 
+}  
+
+a {
+    color: inherit;
+    font-family: $Font;
+
 }
+
 .conteiner {
     width: 1920px;
     margin: 0 auto;
@@ -31,122 +41,108 @@ button {
     display: none;
     
 }
-
 // Меню
 .menu {
     height: 80px;
+    width: 100%;
     background: linear-gradient(180deg, #0C4C7B -100%, #1E2F40 100%);
     z-index: 100;
     top: 0;
     position: fixed;
-    color:$Color_text ;
-    font-family:$Font ;
-    font-size: 30px;
-    p{
-        color:$Color_text ;
-        font-family:$Font ;
-        margin-top: 20px;
-        margin-left: 20px;
-        font-size: 30px;
-    }
-    #eror_message {
-        color:$Color_text ;
-        font-family:$Font ;
-        font-size: 20px;
+    color: #FAF9F9;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 30px; 
+}
+// 
+.auth-form{
+    background: linear-gradient(180deg, #0C4C7B -100%, #1E2F40 100%);
+  
+    
+}
+.auth-body{
+    height: 200px;
+    #eror_message{
 
+        color: black;   
     }
 
 }
 
 //  Авторизация
-.auth {
-    z-index: 100;
-    top: 0;
-    width: 100%;
-    position: fixed;
-    background: linear-gradient(180deg, #0C4C7B -100%, #1E2F40 100%);
-    height: 80px;
-    display: flex;
-    justify-content: flex-start;
+
+.input_name {
+    height: 30px;
+    margin-right: 20px;
     font-size: 20px;
-    
-    color: $Color_text;
-    font-family:$Font ;
+    margin-left: 20px;
+        
+}
 
-    .input_name {
-        height: 30px;
-        margin-right: 20px;
-        font-size: 20px;
-        margin-left: 20px;
-    }
+.password {
+    height: 40px;
+    margin-right: 20px;
+    font-size: 20px;
+    margin-left: 20px;
+    color: #1E2F40;
+}
 
-    .password {
-        height: 40px;
-        margin-right: 20px;
-        font-size: 20px;
-        margin-left: 20px;
-    
-    }
-
-    .auth_input {
+.auth_input {
+    input{
         margin-top: 10px;
-        margin-left: 40px;
-    }
+
     }
   
+       
+}
+ 
 /* шапка */
  .main {
     background: linear-gradient(180deg, #0C4C7B -100%, #1E2F40 100%);
 }
+.main__btn{
+    background: #FBB731;
+    border-radius: 5px;
+    text-decoration: none;
+    padding: 20px 45px;
+    display: inline-block;
+    text-transform: uppercase;
+    font-size: 14px;
+}
 
 .text {
-    color: $Color_text;
-    flex: 0 0 580px;
     padding-top: 170px;
     padding-bottom: 170px;
-    font-family:$Font;
     p  {
     font-size: 19px;
     line-height: 26px;
     font-weight: 400;
     padding-bottom: 42px;
-    font-family: $Font;
-
-    }
-    a {
-        background: #FBB731;
-        border-radius: 5px;
-        text-decoration: none;
-        padding: 20px 45px;
-        display: inline-block;
-        text-transform: uppercase;
-        font-size: 14px;
-        font-family: $Font;
 
     }
 
     h1 {
         span {
-
         color: #FBB731;
         font-weight: bold;
         line-height: 38px;
         font-size: 30px;
         display: block;
         padding-bottom: 10px;
-        font-family: $Font;
 
         }
     }
 }
 
 .title {
-    font-size: 120px;
+    font-size: 100px;
     font-weight: 800;
     text-transform: uppercase;
     line-height: 120px; 
     padding-bottom: 38px;
+    padding-top: 38px;
+    margin: 0;
     font-family: $Font;
+   
 }
 
 /* Правый  */
@@ -157,19 +153,8 @@ button {
     width: 392px;
     background-size: cover;
     padding: 102px 50px ;
-    background-image: url(./images/burger-r.png);
-    
- a {
-    background: #FBB731;
-    border-radius: 5px;
-    text-decoration: none;
-    padding: 20px 45px;
-    display: inline-block;
-    text-transform: uppercase;
-    font-size: 14px;
-    font-family: $Font;
+    background-image: url('../images/burger-r.png');
 
-    } 
 }
 
 .visual {
@@ -203,15 +188,13 @@ img {
 }
 
 .promo-left  {
-    flex: 0 0 49%;
-    width: 300px;
     box-sizing: border-box;
     color: $Color_text;
     background-size: cover;
     background-repeat: no-repeat;
     background-position:  center;
     padding: 116px 50px ;
-    background-image: url(./images/burger-left.png);
+    background-image: url('../images/burger-left.png');
 
 }
 
@@ -244,52 +227,76 @@ img {
 }
 
 /* Подвал */
-.footer {
+footer {
     background: #1E2F40;
     color: $Color_text;
+    padding-top: 20px;
    
 }
 
-.item {
-    li {
+.nav-item {
+    li , .nav-link{
         text-transform: uppercase;
-        list-style: none;
-        margin-bottom: 9px;
         font-family: $Font;
-
+        color: inherit;
+        font-size: 12px;
+        padding-left: 0;
 
     }
+  
 
-    a {
-        text-decoration: none;
-        color: $Color_text;
-        font-family: $Font;
-
-    }
    h2 {
         font-size: 20px;
         line-height: 38px;
         text-transform: uppercase;
-        font-family:  $Font;
         
     }
-
-    margin-top: 115px;
 }
+.nav-link:hover{
 
-.tel {
+        color: #FBB731;
+    }
+
+.nav-item  .list-unstyled.tel {
     li {
-        text-transform: uppercase;
-        list-style: none;
-        margin-bottom: 9px;
-        font-family:$Font;
         color: #FBB731;
         font-family: $Font;
     }
+    :hover{
+
+        color: #fbb831ae;
+    }
+    a {
+        padding-top: 5px;
+        padding-left: 0;
+
+    }
 
     margin-top: 115px;
 }
+
 .log {
     width: 63px;
     height: 56px; 
+}
+
+// Адаптивность
+
+@media (max-width: 900px){
+    .bg{
+
+        display: none;
+    }
+    .title {
+        font-size: 50px;
+        line-height: normal;
+     
+
+
+    }
+    .description{
+        font-size: 20px;
+
+    }
+  
 }

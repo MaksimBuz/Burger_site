@@ -13,7 +13,8 @@ include 'connect.php';
 // Получаем данные с формы
   $name=$mysqli->real_escape_string(htmlspecialchars( $_POST['user_name']));
   $password = $mysqli->real_escape_string(htmlspecialchars( $_POST['Password']));
-  $password=hash_password( $password);
+  // $password=hash_password( $password);
+  echo  $password;
    //  Запрос для получения пароля пользователя
    $query = "SELECT * FROM `Users_burger_site` WHERE name = '$name'";
    $success = $mysqli->query($query);
@@ -35,17 +36,5 @@ include 'connect.php';
 
 
 
-
-
-
-
-
-
-// функция для хэширования
-// function hash_password($password)
-// {
-//     $password=md5($password);
-//      return $password;
-// }
 
  ?>

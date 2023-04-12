@@ -10,8 +10,7 @@ function hash_password($password)
 include 'connect.php';
   $name=$mysqli->real_escape_string(htmlspecialchars( $_POST['user_name']));
   $password = $mysqli->real_escape_string(htmlspecialchars( $_POST['Password']));
-  $password= hash_password($password);
-  // echo  $password;
+//   $password= hash_password($password);
 // Занесение новых пользователей 
 try{
    $query = "INSERT INTO `Users_burger_site` ( `name`, `password`) VALUES ( '$name',  '$password');";

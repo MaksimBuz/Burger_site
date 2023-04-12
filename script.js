@@ -1,10 +1,10 @@
-const btn= document.querySelector('.btn');
+const btn_signup= document.querySelector('.btn-signup');
 const btn_reg= document.querySelector('.btn_reg');
 const user_name= document.querySelector('#input_name');
 const password= document.querySelector('#password');
 const menu= document.querySelector('#menu');
-const auth = document.querySelector('#auth');
-const eror = document.querySelector('#eror_message');
+
+const openFormBtn = document.querySelector('#open_form_btn');
 
 function randomBackgroundImage() { 
     header_image= document.querySelector('.bg');
@@ -16,7 +16,7 @@ function randomBackgroundImage() {
 setInterval('randomBackgroundImage()',1000);
 
  // Авторизация
-btn.addEventListener('click',()=>{
+ btn_signup.addEventListener('click',()=>{
     let xhttp = new XMLHttpRequest();
     xhttp.open('post','action.php', true);
     xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
@@ -30,9 +30,7 @@ btn.addEventListener('click',()=>{
                     menu.prepend(User_greeting);
                     text = document.createTextNode(user_name.value);
                     User_greeting.appendChild( text);    
-                    auth.classList.remove('auth');
-                    auth.classList.add('hiden');
-                }  
+               }  
                 else{
                     eror.innerHTML='Вы забыли указать логин или пароль';
                 }     
@@ -47,7 +45,6 @@ btn_reg.addEventListener('click',()=>{
     xhttp.send(`user_name=${ user_name.value} & Password=${password.value} `);
     xhttp.onreadystatechange = function () {
     if (this.status ==200 && this.readyState ==4) {
-        console.log( xhttp.responseText);
     // Заносим данные в Бд
         if (  xhttp.responseText.trim()=='1'){
             btn_reg.disabled = true;
